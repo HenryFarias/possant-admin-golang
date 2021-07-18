@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"possant-admin/internal/auth"
 	"possant-admin/internal/config"
 	userroutes "possant-admin/internal/domain/user/routes"
 )
@@ -9,6 +10,7 @@ import (
 func main() {
 	db := config.Database()
 	g := gin.Default()
-	r := userroutes.Init(g, InjectUser(db))
-	_ = r.Run(":8080")
+	group := auth.Init(g)
+	userroutes.Init(group, InjectUser(db))
+	_ = g.Run(":8080")
 }

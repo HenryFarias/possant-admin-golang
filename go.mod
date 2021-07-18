@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/Ompluscator/dynamic-struct v1.3.0 // indirect
+	github.com/appleboy/gin-jwt/v2 v2.6.4 // indirect
 	github.com/gin-gonic/gin v1.7.2
 	github.com/google/wire v0.5.0
 	github.com/jackc/pgx/v4 v4.12.0 // indirect

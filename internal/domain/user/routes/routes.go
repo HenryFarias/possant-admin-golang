@@ -5,8 +5,7 @@ import (
 	user "possant-admin/internal/domain/user/handler"
 )
 
-func Init(g *gin.Engine, handler user.UserHandler) *gin.Engine {
-	g.GET("/user", handler.FindAll)
-	g.POST("/user", handler.Save)
-	return g
+func Init(auth *gin.RouterGroup, handler user.UserHandler) {
+	auth.GET("/user", handler.FindAll)
+	auth.POST("/user", handler.Save)
 }
